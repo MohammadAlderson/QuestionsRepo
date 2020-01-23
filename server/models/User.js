@@ -1,46 +1,49 @@
 const mongoose = require('mongoose');
 
 const UserSchema = mongoose.Schema({
-    Username : {
+    userName : {
         minlength: 3,
         type: String,
         require,
-        unique,
-        trim: true
+        trim: true,
+        unique: true
     },
-    Password : {
+    password : {
         minlength: 8,
         type: String,
         require,
         trim: true
     },
-    DisplayName : {
+    displayName : {
         type: String,
         minlength: 1,
         trim: true,
         default: 'User'
     },
-    CreatedDate : {
+    createdDate : {
         type: Number,
         require
     },
-    Email : {
-        type: Email,
-        trim: true
+    email : {
+        type: String,
+        trim: true,
+        unique: true
     },
-    Picture : {
+    picture : {
         type: String,
         trim: true
     },
-    AnsCount : {
+    ansCount : {
         type: Number
     },
-    CorrectAnsCount: {
+    correctAnsCount: {
         type: Number
     },
-    WrongAnsCount: {
+    wrongAnsCount: {
         type: Number
     }
 })
 
 const User = mongoose.model('User', UserSchema);
+
+module.exports = {User}
