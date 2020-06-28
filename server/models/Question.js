@@ -23,6 +23,10 @@ const QuestionSchema = mongoose.Schema({
     type: String,
     require,
   },
+  categoryName: {
+    type: String,
+    require,
+  },
 });
 
 const Question = mongoose.model("Question", QuestionSchema);

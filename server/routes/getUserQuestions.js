@@ -6,14 +6,14 @@ const { User } = require("./../models/User");
 function checkUserExists(userId, res) {
   User.findById(userId, function (err, doc) {
     if (err) {
-      res.send({
+      res.status(404).send({
         statusCode: -2,
         message: "User not Found!",
       });
       return;
     }
     if (doc == null) {
-      res.send({
+      res.status(404).send({
         statusCode: -2,
         message: "User not Found!",
       });
@@ -27,7 +27,11 @@ const GetUserQuestions = app.post("/api/getUserQuestions", async (req, res) => {
   try {
     checkUserExists(userId, res);
     const userQuestions = await Question.find({ userId });
-    res.send(userQuestions);
+    res.send({
+      statusCode: 200,
+      message: "Success",
+      data: userQuestions,
+    });
   } catch (e) {
     console.log(e);
   }
