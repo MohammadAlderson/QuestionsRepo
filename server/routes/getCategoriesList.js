@@ -6,13 +6,14 @@ const { errHandler } = require("./../utils/errHandler");
 const GetAllCategories = app.post("/api/getAllCategories", async (req, res) => {
   try {
     const allCategories = await Category.find();
-    console.log(allCategories);
+    // console.log(allCategories);
     res.send({
       statusCode: 200,
       message: "Success",
       data: allCategories,
     });
   } catch (e) {
+    console.log("err", e);
     errHandler(e);
   }
 });
