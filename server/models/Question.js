@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+var random = require("mongoose-simple-random");
 const QuestionSchema = mongoose.Schema({
   questionText: {
     type: String,
@@ -29,6 +29,7 @@ const QuestionSchema = mongoose.Schema({
   },
 });
 
+QuestionSchema.plugin(random);
 const Question = mongoose.model("Question", QuestionSchema);
 
 module.exports = { Question };

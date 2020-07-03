@@ -10,6 +10,8 @@ const { GetAllCategories } = require("./routes/getCategoriesList");
 const { CreateCategory } = require("./routes/createCategory");
 const { GetUserData } = require("./routes/getUserData");
 const { EditUserProfile } = require("./routes/editUserProfile");
+const { GetQuestionByCategory } = require("./routes/getQuestionByCategory");
+const { SetUserAnswers } = require("./routes/setUserAnswers");
 
 const app = express();
 
@@ -26,6 +28,8 @@ app.use(GetAllCategories);
 app.use(CreateCategory);
 app.use(GetUserData);
 app.use(EditUserProfile);
+app.use(GetQuestionByCategory);
+app.use(SetUserAnswers);
 
 app.get("/", (req, res) => {
   res.send("Welcome Home");

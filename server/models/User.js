@@ -38,9 +38,11 @@ const UserSchema = mongoose.Schema({
   },
   correctAnsCount: {
     type: Number,
+    default: 0,
   },
   wrongAnsCount: {
     type: Number,
+    default: 0,
   },
 });
 
