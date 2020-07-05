@@ -20,8 +20,8 @@ const CreateCategory = app.post("/api/createCategory", async (req, res) => {
     });
     console.log(addedCategory);
   } catch (e) {
-    res.send(e);
-    console.log(e);
+    errHandler(res, e);
+    console.log("/api/createCategory", e);
   }
 });
 

@@ -23,9 +23,9 @@ const CreateQuestion = app.post("/api/createQuestion", async (req, res) => {
       data: "سوال با موفقیت اضافه شد",
     });
     console.log(addedQuestion);
-  } catch (e) {
-    res.send(e);
-    console.log(e);
+  } catch (err) {
+    errHandler(res, err);
+    console.log("/api/createQuestion", err);
   }
 });
 

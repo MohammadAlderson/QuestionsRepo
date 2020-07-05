@@ -32,8 +32,9 @@ const GetUserData = app.post("/api/getUserData", async (req, res) => {
         },
       });
     });
-  } catch (e) {
-    console.log(e);
+  } catch (err) {
+    errHandler(res, err);
+    console.log("/api/getUserData", err);
   }
 });
 

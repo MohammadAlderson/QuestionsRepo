@@ -30,9 +30,9 @@ const Register = app.post("/api/register", async (req, res) => {
         },
       });
     }
-  } catch (e) {
-    console.log(e);
-    res.send(e);
+  } catch (err) {
+    errHandler(res, err);
+    console.log("/api/register", err);
   }
 });
 

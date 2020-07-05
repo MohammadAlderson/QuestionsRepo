@@ -6,8 +6,9 @@ const GetAllQuestions = app.post("/api/getAllQuestions", async (req, res) => {
   try {
     const allQuestions = await Question.find();
     res.send(allQuestions);
-  } catch (e) {
-    console.log(e);
+  } catch (err) {
+    errHandler(res, err);
+    console.log("/api/getAllQuestions", err);
   }
 });
 

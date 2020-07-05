@@ -32,8 +32,9 @@ const GetUserQuestions = app.post("/api/getUserQuestions", async (req, res) => {
       message: "Success",
       data: userQuestions,
     });
-  } catch (e) {
-    console.log(e);
+  } catch (err) {
+    errHandler(res, err);
+    console.log("/api/getUserQuestions", err);
   }
 });
 
