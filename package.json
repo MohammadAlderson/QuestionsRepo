@@ -4,6 +4,7 @@
   "description": "\"# QuestionsRepo\"",
   "main": "index.js",
   "scripts": {
+    "start": "node server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,7 +22,6 @@
     "express": "^4.17.1",
     "mongodb": "^3.5.2",
     "mongoose": "^5.8.9",
-    "mongoose-random": "^0.1.1",
     "mongoose-simple-random": "^0.4.1"
   }
 }
